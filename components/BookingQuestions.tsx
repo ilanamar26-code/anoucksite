@@ -43,7 +43,7 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <label htmlFor="problem" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="problem" className="block text-sm font-medium text-foreground mb-2">
           Quel est le problème principal pour lequel tu consultes aujourd'hui ?
         </label>
         <textarea
@@ -51,8 +51,8 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
           {...register("problem")}
           rows={4}
           className={cn(
-            "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-colors",
-            errors.problem && "border-red-500"
+            "w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors bg-background text-foreground",
+            errors.problem && "border-red-500 focus:border-red-500 focus:ring-red-500"
           )}
           placeholder="Décris brièvement ta situation..."
         />
@@ -62,15 +62,15 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
       </div>
 
       <div>
-        <label htmlFor="duration" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="duration" className="block text-sm font-medium text-foreground mb-2">
           Depuis combien de temps cela dure-t-il ?
         </label>
         <select
           id="duration"
           {...register("duration")}
           className={cn(
-            "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-colors bg-white",
-            errors.duration && "border-red-500"
+            "w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors bg-background text-foreground",
+            errors.duration && "border-red-500 focus:border-red-500 focus:ring-red-500"
           )}
         >
           <option value="">Sélectionne une option</option>
@@ -85,22 +85,22 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-3">
+        <label className="block text-sm font-medium text-foreground mb-3">
           As-tu déjà fait un travail sur toi ?
         </label>
         <div className="space-y-2">
           {(["Oui", "Non"] as const).map((value) => (
             <label
               key={value}
-              className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+              className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg border border-border hover:bg-muted transition-colors"
             >
               <input
                 type="radio"
                 value={value}
                 {...register("priorWork")}
-                className="w-4 h-4 text-rose-600 focus:ring-rose-500"
+                className="w-4 h-4 text-primary focus:ring-primary accent-primary"
               />
-              <span className="text-gray-700">{value}</span>
+              <span className="text-foreground">{value}</span>
             </label>
           ))}
         </div>
@@ -112,7 +112,7 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-rose-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors min-h-[44px]"
+        className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-soft2 hover:shadow-glow min-h-[44px]"
       >
         {isSubmitting ? "Chargement..." : "Accéder au calendrier"}
       </button>
