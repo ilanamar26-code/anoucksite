@@ -659,7 +659,9 @@ export default function Home() {
                     transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Logo size="sm" variant="dark" className="h-6 w-auto" />
+                    <div className="[&_img]:h-6 [&_img]:w-auto">
+                      <Logo size="sm" variant="dark" />
+                    </div>
                   </motion.div>
                 </motion.div>
 
