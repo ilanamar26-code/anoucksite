@@ -7,7 +7,6 @@ import { CTAButton } from "@/components/CTAButton";
 import { GoogleTestimonials } from "@/components/GoogleTestimonials";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { Logo } from "@/components/Logo";
-import { Header } from "@/components/Header";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { primaryCTAUrl, showTestimonials, showTrustLine, cabinetLocation } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,7 +15,12 @@ import { Separator } from "@/components/ui/separator";
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* Logo centré */}
+      <div className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 py-4">
+        <div className="flex justify-center">
+          <Logo size="lg" variant="dark" priority={true} />
+        </div>
+      </div>
       <main className="min-h-screen pb-20 md:pb-0 bg-gradient-to-b from-muted/30 via-background to-background">
         {/* SECTION 1 — HERO — EMOTIONAL ANCHOR */}
         <div className="min-h-screen flex items-center px-4 md:px-6 lg:px-8 py-8 md:py-12">
