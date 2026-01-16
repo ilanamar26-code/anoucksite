@@ -121,18 +121,6 @@ export function GoogleTestimonials() {
         ))}
       </div>
 
-      {/* Note: Pour intégrer de vrais témoignages Google, utilisez Trustindex ou Google Reviews API */}
-      <motion.div
-        className="text-center text-sm text-muted-foreground pt-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-      >
-        <p>
-          Pour intégrer vos vrais témoignages Google, configurez Trustindex ou utilisez l'API Google Reviews.
-        </p>
-      </motion.div>
     </div>
   );
 }
