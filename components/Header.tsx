@@ -5,7 +5,6 @@ import { Logo } from "./Logo";
 import { useState } from "react";
 import { primaryCTAUrl } from "@/lib/constants";
 import { CTAButton } from "./CTAButton";
-import { MapPin } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,14 +20,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex h-14 md:h-16 items-center justify-between">
-          <Link href="/" className="flex flex-col items-center">
-            <Logo size="sm" variant="dark" priority={true} />
-            <div className="flex items-center gap-1.5 mt-1 hidden md:flex">
-              <MapPin className="w-3 h-3 text-primary" />
-              <span className="text-xs text-muted-foreground">
-                Cabinet privé situé à Dubai - UAE
-              </span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Logo size="md" variant="dark" priority={true} />
           </Link>
 
           {/* Desktop Navigation */}

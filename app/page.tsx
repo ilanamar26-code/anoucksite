@@ -82,6 +82,9 @@ export default function Home() {
                     <p className="text-base md:text-lg text-foreground/90">
                       🟢 <strong className="text-foreground">Et il est possible d'aller mieux, plus vite que vous ne l'imaginez.</strong>
                     </p>
+                    <p className="text-sm text-muted-foreground pt-2">
+                      Cabinet situé à Dubai
+                    </p>
                   </motion.div>
                 </div>
 
