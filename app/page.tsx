@@ -60,7 +60,7 @@ export default function Home() {
                     transition={{ delay: 0.5, duration: 0.7 }}
                   >
                     <p>
-                      Je vous accompagne pour faire disparaître ce qui entrave votre épanouissement : phobies, traumatismes, angoisses, peurs, sommeil, burnout, surpoids...
+                      Je vous accompagne pour faire disparaître ce qui entrave votre épanouissement : angoisses, peurs, stagnation, surmenage, surcontrôle, surpoids...
                     </p>
                   </motion.div>
 
