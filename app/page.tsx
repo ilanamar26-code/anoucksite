@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Section } from "@/components/Section";
 import { CTAButton } from "@/components/CTAButton";
-import { Testimonials } from "@/components/Testimonials";
+import { GoogleTestimonials } from "@/components/GoogleTestimonials";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { Logo } from "@/components/Logo";
 import { Header } from "@/components/Header";
@@ -87,21 +87,31 @@ export default function Home() {
                 </div>
                 
                 {/* CTA — EMOTIONAL ANCHOR */}
-                <motion.div 
-                  className="flex flex-col items-start gap-4 pt-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1, duration: 0.7 }}
-                >
+                  <motion.div 
+                    className="flex flex-col sm:flex-row items-start gap-4 pt-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.7 }}
+                  >
                   <CTAButton
                     href={primaryCTAUrl}
                     eventName="cta_click_hero"
                     variant="primary"
                     size="lg"
                     delay={0}
-                    className="w-full md:w-auto"
+                    className="w-full sm:w-auto"
                   >
                     👉 Prendre rendez-vous
+                  </CTAButton>
+                  <CTAButton
+                    href="/cas-d-usage"
+                    eventName="cta_click_cas_usage_hero"
+                    variant="secondary"
+                    size="lg"
+                    delay={0.1}
+                    className="w-full sm:w-auto"
+                  >
+                    Découvrir les cas d'usage
                   </CTAButton>
                   {showTrustLine && (
                     <motion.p 
@@ -152,263 +162,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* SECTION 2 — ANXIÉTÉ & SURCHARGE MENTALE */}
-        <AnimatedSection>
-          <Section>
-            <div className="grid gap-10 md:grid-cols-[1fr_1fr] items-center">
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  🧠
-                </motion.div>
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  Anxiété & surcharge mentale
-                </h2>
-                <p className="text-xl md:text-2xl font-medium text-foreground/90">
-                  Quand tout est sous contrôle… sauf l'intérieur
-                </p>
-                <div className="space-y-4 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Pensées qui tournent</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Difficulté à lâcher prise</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Hyper-vigilance permanente</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-primary text-xl">👉 Apprendre à calmer le système nerveux en profondeur</p>
-                      <p className="font-semibold text-primary text-xl">👉 Retrouver une sécurité intérieure stable</p>
-                      <p className="pt-4 text-base text-foreground/80">
-                        <strong className="text-foreground">Il est possible d'aller mieux sans se forcer.</strong> Votre problématique a une logique. Le changement peut être doux.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 3 — SOMMEIL */}
-        <AnimatedSection delay={0.1}>
-          <Section className="bg-gradient-to-br from-muted/40 via-muted/30 to-muted/40 rounded-3xl py-16 md:py-20">
-            <div className="grid gap-10 md:grid-cols-[1fr_1fr] items-center">
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  😴
-                </motion.div>
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  Sommeil
-                </h2>
-                <p className="text-xl md:text-2xl font-medium text-foreground/90">
-                  Dormir sans lutter
-                </p>
-                <div className="space-y-4 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Endormissement difficile</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Réveils nocturnes</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Corps fatigué, esprit en alerte</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-primary text-xl">👉 Réinstaller des nuits réparatrices</p>
-                      <p className="font-semibold text-primary text-xl">👉 Permettre au corps de se reposer enfin</p>
-                      <p className="pt-4 text-base text-foreground/80">
-                        <strong className="text-foreground">Votre corps sait déjà comment guérir.</strong> Vous pouvez retrouver de la légèreté. Le changement peut être doux.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 4 — RELATION À LA NOURRITURE */}
-        <AnimatedSection>
-          <Section>
-            <div className="grid gap-10 md:grid-cols-[1fr_1fr] items-center">
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  🍽️
-                </motion.div>
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  Relation à la nourriture
-                </h2>
-                <p className="text-xl md:text-2xl font-medium text-foreground/90">
-                  Se libérer de la lutte avec son corps
-                </p>
-                <div className="space-y-4 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Contrôle / perte de contrôle</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Culpabilité</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Rapport conflictuel à l'alimentation</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-primary text-xl">👉 Retrouver une relation plus douce, plus juste avec soi-même</p>
-                      <p className="font-semibold text-primary text-xl">👉 Sortir du cycle tension → compensation</p>
-                      <p className="pt-4 text-base text-foreground/80">
-                        <strong className="text-foreground">Tu n'es pas cassé(e).</strong> Ton système essaie de te protéger. <strong className="text-foreground">Et on peut le reprogrammer autrement.</strong>
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 5 — PHOBIES */}
-        <AnimatedSection delay={0.1}>
-          <Section className="bg-gradient-to-br from-muted/40 via-muted/30 to-muted/40 rounded-3xl py-16 md:py-20">
-            <div className="grid gap-10 md:grid-cols-[1fr_1fr] items-center">
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                >
-                  🐭
-                </motion.div>
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  Phobies
-                </h2>
-                <p className="text-xl md:text-2xl font-medium text-foreground/90">
-                  Quand la peur prend toute la place
-                </p>
-                <div className="space-y-4 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Réactions disproportionnées</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Peur incontrôlable</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-primary text-xl">•</span>
-                    <p>Évitement</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-primary text-xl">👉 Désactiver la réponse automatique de peur</p>
-                      <p className="font-semibold text-primary text-xl">👉 Retrouver de la liberté là où il y avait une prison</p>
-                      <p className="pt-4 text-base text-foreground/80">
-                        <strong className="text-foreground">Votre problématique a une logique.</strong> Il est possible d'aller mieux sans se forcer. <strong className="text-foreground">Vous pouvez retrouver de la légèreté.</strong>
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 6 — RECONNAISSANCE ÉMOTIONNELLE */}
+        {/* SECTION 2 — RECONNAISSANCE ÉMOTIONNELLE */}
         <AnimatedSection>
           <Section>
             <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] items-center">
@@ -640,10 +394,10 @@ export default function Home() {
           </Section>
         </AnimatedSection>
 
-        {/* SECTION 5 — PREUVE SOCIALE */}
+        {/* SECTION 5 — TÉMOIGNAGES GOOGLE */}
         {showTestimonials && (
           <AnimatedSection delay={0.1}>
-            <Section>
+            <Section id="temoignages">
               <div className="space-y-8">
                 <motion.div 
                   className="text-center space-y-4"
@@ -653,17 +407,14 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
-                    Preuve sociale
+                    Témoignages
                   </p>
-                  <h2 className="text-3xl md:text-4xl font-semibold">Elles en parlent mieux que moi.</h2>
-                  <p className="text-lg md:text-xl text-muted-foreground font-medium">
-                    Des dizaines de personnes m'ont déjà fait confiance.
-                  </p>
+                  <h2 className="text-3xl md:text-4xl font-semibold">Des dizaines de personnes m'ont déjà fait confiance</h2>
                   <p className="text-sm text-muted-foreground">
-                    Ce qui change, concrètement, après une séance de clarté.
+                    Trustindex vérifie que la source originale de l'avis est Google.
                   </p>
                 </motion.div>
-                <Testimonials />
+                <GoogleTestimonials />
                 <motion.div 
                   className="text-center pt-6"
                   initial={{ opacity: 0, y: 20 }}
@@ -957,7 +708,7 @@ export default function Home() {
 
         {/* SECTION 7 — QUI SUIS-JE (CRÉDIBILITÉ) */}
         <AnimatedSection>
-          <Section>
+          <Section id="a-propos">
             <div className="space-y-10">
               <motion.div 
                 className="text-center space-y-4"
