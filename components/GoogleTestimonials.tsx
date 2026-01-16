@@ -64,9 +64,6 @@ export function GoogleTestimonials() {
             Basée sur <strong>{totalReviews} avis</strong>
           </span>
         </div>
-        <p className="text-sm text-muted-foreground">
-          Trustindex vérifie que la source originale de l'avis est Google.
-        </p>
       </motion.div>
 
       {/* Grid de témoignages - 4 en ligne horizontale */}
