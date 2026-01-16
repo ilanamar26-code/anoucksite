@@ -15,6 +15,25 @@ import { Separator } from "@/components/ui/separator";
 export default function Home() {
   return (
     <>
+      {/* Header avec logo centré et fond PNG */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80">
+        <div className="relative w-full h-20 md:h-24 flex items-center justify-center">
+          {/* Fond PNG - vous pouvez remplacer par votre propre image PNG */}
+          <div 
+            className="absolute inset-0 opacity-10 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/branding/logo-white-solid.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Logo centré */}
+          <div className="relative z-10">
+            <Logo size="lg" variant="dark" priority={true} />
+          </div>
+        </div>
+      </header>
+      
       {/* CTA Sticky en haut à droite */}
       <div className="fixed top-4 right-4 z-50">
         <CTAButton
