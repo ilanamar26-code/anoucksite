@@ -168,7 +168,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                   {/* Badge avec logo — Animation */}
                   <motion.div 
-                    className="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-soft border border-primary/20"
+                    className="absolute -bottom-4 -right-4 bg-secondary backdrop-blur-sm rounded-full p-3 shadow-soft border border-primary/20"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.2, duration: 0.5, type: "spring" }}
@@ -774,7 +774,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </motion.div>
                   <motion.div 
-                    className="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-soft2 border-2 border-primary/20"
+                    className="absolute -bottom-4 -right-4 bg-secondary backdrop-blur-sm rounded-full p-3 shadow-soft2 border-2 border-primary/20"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
