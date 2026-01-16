@@ -580,37 +580,6 @@ export default function Home() {
                   </motion.div>
                 </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1, duration: 0.6 }}
-                >
-                  <Card className="border-dashed border-border/80 bg-white/90 backdrop-blur-sm hover:shadow-soft transition-all duration-300">
-                    <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                      <h3 className="text-2xl font-semibold text-foreground">Mon approche</h3>
-                      <p>
-                        Ici, on ne force pas le changement.
-                        <br />
-                        On ne lutte pas contre toi.
-                      </p>
-                      <p>
-                        On ne travaille pas uniquement avec le mental.
-                        <br />
-                        On travaille avec ce qui, en toi, réagit encore comme si le danger était présent.
-                      </p>
-                      <p className="font-medium">Quand ton système se sent enfin en sécurité :</p>
-                      <ul className="list-disc list-inside space-y-2 ml-4">
-                        <li>les réactions changent</li>
-                        <li>les schémas s'assouplissent</li>
-                        <li>le contrôle devient inutile</li>
-                      </ul>
-                      <p className="font-semibold text-foreground text-xl pt-2">
-                        👉 Le changement devient possible sans te forcer à lâcher prise.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
               </motion.div>
             </div>
           </Section>
@@ -635,7 +604,7 @@ export default function Home() {
                 </h2>
               </motion.div>
 
-              <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
+              <div className="grid md:grid-cols-[1fr_1.2fr_1fr] gap-10 items-start">
                 <motion.div 
                   className="relative order-2 md:order-1"
                   initial={{ opacity: 0, x: -30 }}
@@ -707,6 +676,40 @@ export default function Home() {
                           </p>
                         )}
                       </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+
+                {/* Card Mon approche */}
+                <motion.div
+                  className="order-3"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Card className="border-dashed border-border/80 bg-white/90 backdrop-blur-sm hover:shadow-soft transition-all duration-300 h-full">
+                    <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
+                      <h3 className="text-2xl font-semibold text-foreground">Mon approche</h3>
+                      <p>
+                        Ici, on ne force pas le changement.
+                        <br />
+                        On ne lutte pas contre toi.
+                      </p>
+                      <p>
+                        On ne travaille pas uniquement avec le mental.
+                        <br />
+                        On travaille avec ce qui, en toi, réagit encore comme si le danger était présent.
+                      </p>
+                      <p className="font-medium">Quand ton système se sent enfin en sécurité :</p>
+                      <ul className="list-disc list-inside space-y-2 ml-4">
+                        <li>les réactions changent</li>
+                        <li>les schémas s'assouplissent</li>
+                        <li>le contrôle devient inutile</li>
+                      </ul>
+                      <p className="font-semibold text-foreground text-xl pt-2">
+                        👉 Le changement devient possible sans te forcer à lâcher prise.
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
