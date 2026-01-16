@@ -69,8 +69,8 @@ export function GoogleTestimonials() {
         </p>
       </motion.div>
 
-      {/* Grid de témoignages - 4 en ligne */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {/* Grid de témoignages - 4 en ligne horizontale */}
+      <div className="flex flex-row gap-6 overflow-x-auto pb-4">
         {testimonials.map((testimonial, idx) => (
           <motion.div
             key={idx}
@@ -79,7 +79,7 @@ export function GoogleTestimonials() {
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.5 }}
           >
-            <Card className="h-full border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-glow hover:scale-[1.02] transition-all duration-300">
+            <Card className="flex-shrink-0 w-[300px] md:w-[350px] border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-glow hover:scale-[1.02] transition-all duration-300">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
