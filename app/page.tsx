@@ -62,9 +62,6 @@ export default function Home() {
                     <p>
                       Je vous accompagne pour faire disparaître ce qui entrave votre épanouissement : phobies, traumatismes, angoisses, peurs, sommeil, burnout, surpoids...
                     </p>
-                    <p className="text-xl md:text-2xl font-medium text-foreground">
-                      👉 Une voie de compréhension, de libération et de transformation intérieure.
-                    </p>
                   </motion.div>
 
                   <motion.div 
