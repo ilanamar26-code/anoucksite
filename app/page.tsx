@@ -60,8 +60,7 @@ export default function Home() {
                     transition={{ delay: 0.5, duration: 0.7 }}
                   >
                     <p>
-                      Quand l'anxiété, les peurs, les troubles du sommeil ou de l'alimentation prennent trop de place,
-                      il existe une autre voie que le combat.
+                      Je vous accompagne pour faire disparaître ce qui entrave votre épanouissement : phobies, traumatismes, angoisses, peurs, sommeil, burnout, surpoids...
                     </p>
                     <p className="text-xl md:text-2xl font-medium text-foreground">
                       👉 Une voie de compréhension, de libération et de transformation intérieure.
