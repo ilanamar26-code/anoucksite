@@ -118,7 +118,7 @@ export default function Home() {
                 
                 {/* CTA — EMOTIONAL ANCHOR */}
                   <motion.div 
-                    className="flex flex-col sm:flex-row items-start gap-3 pt-4"
+                    className="flex flex-col sm:flex-row items-center gap-4 pt-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.7 }}
@@ -135,12 +135,12 @@ export default function Home() {
                   </CTAButton>
                   {showTrustLine && (
                     <motion.p 
-                      className="text-xs text-muted-foreground"
+                      className="text-base md:text-lg font-medium text-foreground text-center"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.3, duration: 0.5 }}
                     >
-                      Réponse sous 24–48h
+                      Réponse sous 24h
                     </motion.p>
                   )}
                 </motion.div>
