@@ -474,51 +474,58 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-semibold">Je m'adresse à toutes les personnes qui...</h2>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <div className="absolute top-6 right-6 opacity-5">
-                    <Logo size="lg" variant="dark" />
-                  </div>
-                  <CardContent className="p-8 md:p-10 space-y-6 relative z-10">
-                    <div className="grid gap-5">
-                      {[
-                        { text: "Toutes les personnes qui ont eu des", highlight: "décalages intérieurs", highlight2: "blocages émotionnels", icon: "💫" },
-                        { text: "Toutes les personnes qui souffrent de", highlight: "stress, d'anxiété, de tensions", icon: "🌀" },
-                        { text: "Toutes les personnes qui sont", highlight: "tendues, anxieuses", highlight2: "pression intérieure", icon: "⚡" },
-                        { text: "Toutes les personnes en", highlight: "parcours de développement personnel", icon: "🌱" },
-                        { text: "Toutes les personnes qui sentent que les", highlight: "perturbations de leur système sont liées", icon: "🔗" },
-                      ].map((item, idx) => (
-                        <motion.div 
-                          key={idx} 
-                          className="flex items-start gap-4"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: idx * 0.1, duration: 0.5 }}
-                        >
-                          <div className="text-2xl flex-shrink-0 mt-1">{item.icon}</div>
-                          <p className="text-lg md:text-xl text-foreground/85 leading-relaxed flex-1">
-                            {item.text} <strong className="text-foreground">{item.highlight}</strong>
-                            {item.highlight2 && (
-                              <> ou <strong className="text-foreground">{item.highlight2}</strong></>
-                            )}
-                            {idx === 0 && " qui rendent parfois leur quotidien difficile..."}
-                            {idx === 1 && " et qui ne trouvent aucune solution durable malgré leurs efforts."}
-                            {idx === 2 && ", qui ressentent une pression intérieure, des réactions incontrôlables..."}
-                            {idx === 3 && " et qui recherchent une approche complémentaire efficace."}
-                            {idx === 4 && ", mais qui ne trouvent pas la bonne personne pour les traiter."}
-                          </p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              {/* Cards indépendantes 2x2 - Garder 4/5 des cas */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { 
+                    text: "Toutes les personnes qui ont eu des", 
+                    highlight: "décalages intérieurs", 
+                    highlight2: "blocages émotionnels", 
+                    icon: "💫",
+                    suffix: "qui rendent parfois leur quotidien difficile..."
+                  },
+                  { 
+                    text: "Toutes les personnes qui souffrent de", 
+                    highlight: "stress, d'anxiété, de tensions", 
+                    icon: "🌀",
+                    suffix: "et qui ne trouvent aucune solution durable malgré leurs efforts."
+                  },
+                  { 
+                    text: "Toutes les personnes qui sont", 
+                    highlight: "tendues, anxieuses", 
+                    highlight2: "pression intérieure", 
+                    icon: "⚡",
+                    suffix: "qui ressentent une pression intérieure, des réactions incontrôlables..."
+                  },
+                  { 
+                    text: "Toutes les personnes en", 
+                    highlight: "parcours de développement personnel", 
+                    icon: "🌱",
+                    suffix: "et qui recherchent une approche complémentaire efficace."
+                  },
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  >
+                    <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft2 hover:shadow-glow transition-all duration-300 h-full">
+                      <CardContent className="p-6 md:p-8 space-y-4">
+                        <div className="text-4xl mb-3">{item.icon}</div>
+                        <p className="text-base md:text-lg text-foreground/85 leading-relaxed">
+                          {item.text} <strong className="text-foreground">{item.highlight}</strong>
+                          {item.highlight2 && (
+                            <> ou <strong className="text-foreground">{item.highlight2}</strong></>
+                          )}
+                          {" "}{item.suffix}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
 
               <motion.div 
                 className="space-y-4 text-center"
