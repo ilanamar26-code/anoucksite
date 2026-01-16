@@ -20,8 +20,11 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex h-14 md:h-16 items-center justify-between">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex flex-col items-center">
             <Logo size="sm" variant="dark" priority={true} />
+            <span className="text-xs text-muted-foreground mt-1 hidden md:block">
+              Hypnothérapeute à Dubai
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
