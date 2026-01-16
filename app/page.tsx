@@ -555,12 +555,12 @@ export default function Home() {
                         { text: "d'analyser tes schémas", icon: "🔬" },
                         { text: "de contrôler tes réactions", icon: "🎯" },
                         { text: "de lâcher prise (sans y arriver)", icon: "🤲" },
-                        { text: "du développement personnel", icon: "📖" },
+                        { text: "du développement personnel", icon: "📖", fullWidth: true },
                         { text: "des thérapies classiques", icon: "💊" },
                       ].map((item, idx) => (
                         <motion.div 
                           key={item.text} 
-                          className="flex items-center gap-3 text-base md:text-lg text-foreground/85 bg-white/70 px-4 py-3 rounded-lg border border-border/40 hover:border-primary/30 hover:bg-white/90 transition-all duration-300"
+                          className={`flex items-center gap-3 text-base md:text-lg text-foreground/85 bg-white/70 px-4 py-3 rounded-lg border border-border/40 hover:border-primary/30 hover:bg-white/90 transition-all duration-300 ${item.fullWidth ? 'sm:col-span-2' : ''}`}
                           initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
