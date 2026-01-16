@@ -36,34 +36,6 @@ export function GoogleTestimonials() {
       text: "Anouck est une thérapeute bienveillante et à l'écoute. Elle sait nous guider pour utiliser au mieux nos ressources intérieures. Je recommande les yeux fermés.",
       verified: true,
     },
-    {
-      name: "Élodie P.",
-      date: "2024-10-06",
-      rating: 5,
-      text: "Merci à Anouck pour son professionnalisme, je recommande vivement! Une première expérience pour moi et super découverte autant professionnelle que humaine.",
-      verified: true,
-    },
-    {
-      name: "Lauriane T.",
-      date: "2024-10-04",
-      rating: 5,
-      text: "Accompagnement avec bienveillance et professionnalisme, je recommande. Merci infiniment à Anouck pour l'accompagnement irréprochable.",
-      verified: true,
-    },
-    {
-      name: "Manon L.",
-      date: "2024-09-15",
-      rating: 5,
-      text: "Séance de groupe pour apprendre à découvrir Anouck et la pratique de la relaxation. Séance super intéressante, Anouck met tout de suite en confiance et est très solaire.",
-      verified: true,
-    },
-    {
-      name: "Florent V.",
-      date: "2024-08-20",
-      rating: 5,
-      text: "Anouck m'a accueilli avec bienveillance. Elle a été très à l'écoute de mes enjeux et m'a aidé avec une solution sur-mesure. Je suis très reconnaissant.",
-      verified: true,
-    },
   ];
 
   const averageRating = 5;
@@ -97,9 +69,9 @@ export function GoogleTestimonials() {
         </p>
       </motion.div>
 
-      {/* Grid de témoignages - 4 par ligne, 2 lignes */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {testimonials.slice(0, 8).map((testimonial, idx) => (
+      {/* Grid de témoignages - 4 en ligne */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        {testimonials.map((testimonial, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
