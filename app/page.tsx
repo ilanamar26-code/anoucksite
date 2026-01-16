@@ -314,12 +314,9 @@ export default function Home() {
                           </CardContent>
                         </Card>
                       </motion.div>
-                    ))}
-                  </div>
-                  <p className="pt-4 font-medium text-foreground text-lg">
-                    Et malgré tout, le stress, l'anxiété ou la tension reviennent.
-                  </p>
-                </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
                 
                 {/* CTA CARD — EMOTIONAL ANCHOR */}
                 <motion.div 
