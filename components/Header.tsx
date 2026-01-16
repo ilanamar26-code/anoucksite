@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 import { useState } from "react";
 import { primaryCTAUrl } from "@/lib/constants";
 import { CTAButton } from "./CTAButton";
+import { MapPin } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,12 @@ export function Header() {
         <div className="flex h-14 md:h-16 items-center justify-between">
           <Link href="/" className="flex flex-col items-center">
             <Logo size="sm" variant="dark" priority={true} />
-            <span className="text-xs text-muted-foreground mt-1 hidden md:block">
-              Hypnothérapeute à Dubai
-            </span>
+            <div className="flex items-center gap-1.5 mt-1 hidden md:flex">
+              <MapPin className="w-3 h-3 text-primary" />
+              <span className="text-xs text-muted-foreground">
+                Cabinet privé situé à Dubai - UAE
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
