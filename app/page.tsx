@@ -94,9 +94,9 @@ export default function Home() {
                   transition={{ delay: 0.9, duration: 0.7 }}
                 >
                   {[
-                    { title: "Programmation neuro-linguistique", icon: "🧠" },
-                    { title: "Hypnose", icon: "✨" },
-                    { title: "Ennéagramme", icon: "🔮" },
+                    { shortTitle: "PNL", title: "Programmation neuro-linguistique", icon: "🧠" },
+                    { shortTitle: null, title: "Hypnose", icon: "✨" },
+                    { shortTitle: null, title: "Ennéagramme", icon: "🎯" },
                   ].map((method, idx) => (
                     <motion.div
                       key={method.title}
@@ -107,6 +107,11 @@ export default function Home() {
                       <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-soft2 hover:scale-[1.02] transition-all duration-300 h-full">
                         <CardContent className="p-3 text-center space-y-1.5">
                           <div className="text-2xl mb-1">{method.icon}</div>
+                          {method.shortTitle && (
+                            <p className="text-sm md:text-base font-semibold text-foreground leading-tight">
+                              {method.shortTitle}
+                            </p>
+                          )}
                           <p className="text-xs md:text-sm font-medium text-foreground leading-tight">
                             {method.title}
                           </p>
