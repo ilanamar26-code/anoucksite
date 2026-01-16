@@ -15,6 +15,19 @@ import { Separator } from "@/components/ui/separator";
 export default function Home() {
   return (
     <>
+      {/* CTA Sticky en haut à droite */}
+      <div className="fixed top-4 right-4 z-50">
+        <CTAButton
+          href={primaryCTAUrl}
+          eventName="cta_click_sticky"
+          variant="primary"
+          size="md"
+          delay={0}
+          className="shadow-lg hover:shadow-xl"
+        >
+          Prendre RDV
+        </CTAButton>
+      </div>
       <main className="min-h-screen pb-20 md:pb-0 bg-gradient-to-b from-muted/30 via-background to-background">
         {/* SECTION 1 — HERO — EMOTIONAL ANCHOR */}
         <div className="min-h-screen flex items-center px-4 md:px-6 lg:px-8 py-8 md:py-12">
@@ -639,14 +652,14 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </motion.div>
                   <motion.div 
-                    className="absolute -bottom-4 -right-4 bg-secondary backdrop-blur-sm rounded-full p-3 shadow-soft2 border-2 border-primary/20"
+                    className="absolute -bottom-4 -right-4 bg-secondary backdrop-blur-sm rounded-full p-2 shadow-soft2 border-2 border-primary/20"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Logo size="sm" variant="dark" />
+                    <Logo size="sm" variant="dark" className="h-6 w-auto" />
                   </motion.div>
                 </motion.div>
 
