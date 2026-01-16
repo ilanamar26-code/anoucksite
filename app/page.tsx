@@ -205,7 +205,6 @@ export default function Home() {
                     <strong className="text-foreground">Et on peut le reprogrammer autrement.</strong>
                   </p>
                   <p className="pt-2 text-xl font-medium text-foreground">
-                    <strong>Il est possible d'aller mieux sans se forcer.</strong>
                   </p>
                 </div>
               </motion.div>

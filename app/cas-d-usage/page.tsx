@@ -22,7 +22,7 @@ export default function CasUsagePage() {
         "👉 Apprendre à calmer le système nerveux en profondeur",
         "👉 Retrouver une sécurité intérieure stable",
       ],
-      message: "Il est possible d'aller mieux sans se forcer. Votre problématique a une logique. Le changement peut être doux.",
+      message: "Votre problématique a une logique. Le changement peut être doux.",
     },
     {
       icon: "😴",
@@ -68,7 +68,7 @@ export default function CasUsagePage() {
         "👉 Désactiver la réponse automatique de peur",
         "👉 Retrouver de la liberté là où il y avait une prison",
       ],
-      message: "Votre problématique a une logique. Il est possible d'aller mieux sans se forcer. Vous pouvez retrouver de la légèreté.",
+      message: "Votre problématique a une logique. Vous pouvez retrouver de la légèreté.",
       bgAlt: true,
     },
   ];
