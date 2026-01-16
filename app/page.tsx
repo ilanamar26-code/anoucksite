@@ -133,16 +133,6 @@ export default function Home() {
                   >
                     👉 Prendre rendez-vous
                   </CTAButton>
-                  <CTAButton
-                    href="/cas-d-usage"
-                    eventName="cta_click_cas_usage_hero"
-                    variant="secondary"
-                    size="lg"
-                    delay={0.1}
-                    className="w-full sm:w-auto"
-                  >
-                    Découvrir les cas d'usage
-                  </CTAButton>
                   {showTrustLine && (
                     <motion.p 
                       className="text-xs text-muted-foreground"
