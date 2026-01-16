@@ -356,27 +356,27 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { 
-                    text: "Toutes les personnes qui ont eu des", 
+                    text: "qui ont eu des", 
                     highlight: "décalages intérieurs", 
                     highlight2: "blocages émotionnels", 
                     icon: "💫",
                     suffix: "qui rendent parfois leur quotidien difficile..."
                   },
                   { 
-                    text: "Toutes les personnes qui souffrent de", 
+                    text: "qui souffrent de", 
                     highlight: "stress, d'anxiété, de tensions", 
                     icon: "🌀",
                     suffix: "et qui ne trouvent aucune solution durable malgré leurs efforts."
                   },
                   { 
-                    text: "Toutes les personnes qui sont", 
+                    text: "qui sont", 
                     highlight: "tendues, anxieuses", 
                     highlight2: "pression intérieure", 
                     icon: "⚡",
                     suffix: "qui ressentent une pression intérieure, des réactions incontrôlables..."
                   },
                   { 
-                    text: "Toutes les personnes en", 
+                    text: "en", 
                     highlight: "parcours de développement personnel", 
                     icon: "🌱",
                     suffix: "et qui recherchent une approche complémentaire efficace."
