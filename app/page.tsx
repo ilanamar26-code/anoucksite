@@ -154,7 +154,7 @@ export default function Home() {
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
               >
                 <motion.div 
-                  className="relative aspect-[3/4] max-h-[400px] md:max-h-[500px] lg:max-h-[550px] rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
+                  className="relative aspect-[3/4] max-h-[500px] md:max-h-[600px] lg:max-h-[650px] rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
