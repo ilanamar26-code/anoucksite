@@ -19,12 +19,12 @@ export default function Home() {
       <Header />
       <main className="min-h-screen pb-20 md:pb-0 bg-gradient-to-b from-muted/30 via-background to-background">
         {/* SECTION 1 — HERO — EMOTIONAL ANCHOR */}
-        <div className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4.5rem)] flex items-center px-4 md:px-6 lg:px-8 py-12 md:py-16">
+        <div className="min-h-screen flex items-center px-4 md:px-6 lg:px-8 py-8 md:py-12">
           <div className="w-full max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 lg:gap-20 items-center">
+            <div className="grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
               {/* Contenu texte — Animation progressive */}
               <motion.div 
-                className="space-y-6 md:space-y-8"
+                className="space-y-4 md:space-y-5"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -43,7 +43,7 @@ export default function Home() {
                   Cabinet / Visio — sur rendez-vous
                 </motion.div>
                 
-                <div className="space-y-5 md:space-y-6">
+                <div className="space-y-4 md:space-y-5">
                   <motion.h1 
                     className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight text-foreground"
                     initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function Home() {
                   </motion.h1>
                   
                   <motion.div 
-                    className="space-y-4 text-lg md:text-xl text-foreground/80 leading-relaxed"
+                    className="text-base md:text-lg text-foreground/80 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.7 }}
@@ -65,29 +65,30 @@ export default function Home() {
                   </motion.div>
 
                   <motion.div 
-                    className="space-y-3 pt-2"
+                    className="space-y-2 pt-1"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.7 }}
                   >
-                    <p className="text-base md:text-lg text-foreground/90">
+                    <p className="text-sm md:text-base text-foreground/90">
                       🟢 <strong className="text-foreground">Vous n'êtes pas le problème.</strong>
                     </p>
-                    <p className="text-base md:text-lg text-foreground/90">
+                    <p className="text-sm md:text-base text-foreground/90">
                       🟢 <strong className="text-foreground">Votre corps et votre esprit cherchent une solution.</strong>
                     </p>
-                    <p className="text-base md:text-lg text-foreground/90">
+                    <p className="text-sm md:text-base text-foreground/90">
                       🟢 <strong className="text-foreground">Et il est possible d'aller mieux, plus vite que vous ne l'imaginez.</strong>
                     </p>
-                    <p className="text-sm text-muted-foreground pt-2">
-                      Cabinet situé à Dubai
+                    <p className="text-xs md:text-sm text-muted-foreground pt-2 flex items-center gap-1.5">
+                      <span>📍</span>
+                      <span>Cabinet situé à Dubai, Emirats Arabes Unis</span>
                     </p>
                   </motion.div>
                 </div>
 
                 {/* Cards Méthodes */}
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6"
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9, duration: 0.7 }}
@@ -104,9 +105,9 @@ export default function Home() {
                       transition={{ delay: 0.95 + idx * 0.1, duration: 0.5 }}
                     >
                       <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-soft2 hover:scale-[1.02] transition-all duration-300 h-full">
-                        <CardContent className="p-4 text-center space-y-2">
-                          <div className="text-3xl mb-2">{method.icon}</div>
-                          <p className="text-sm md:text-base font-medium text-foreground leading-tight">
+                        <CardContent className="p-3 text-center space-y-1.5">
+                          <div className="text-2xl mb-1">{method.icon}</div>
+                          <p className="text-xs md:text-sm font-medium text-foreground leading-tight">
                             {method.title}
                           </p>
                         </CardContent>
@@ -117,7 +118,7 @@ export default function Home() {
                 
                 {/* CTA — EMOTIONAL ANCHOR */}
                   <motion.div 
-                    className="flex flex-col sm:flex-row items-start gap-4 pt-6"
+                    className="flex flex-col sm:flex-row items-start gap-3 pt-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.7 }}
@@ -144,7 +145,7 @@ export default function Home() {
                   </CTAButton>
                   {showTrustLine && (
                     <motion.p 
-                      className="text-sm text-muted-foreground"
+                      className="text-xs text-muted-foreground"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.3, duration: 0.5 }}
@@ -157,13 +158,13 @@ export default function Home() {
 
               {/* Photo d'Anouck — Animation subtile */}
               <motion.div 
-                className="relative order-first md:order-last"
+                className="relative order-first md:order-last md:sticky md:top-20"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
               >
                 <motion.div 
-                  className="relative aspect-[3/4] max-h-[500px] md:max-h-[650px] rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
+                  className="relative aspect-[3/4] max-h-[400px] md:max-h-[500px] lg:max-h-[550px] rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
                   whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 >
                   <Image
