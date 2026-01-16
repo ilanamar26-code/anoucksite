@@ -94,7 +94,7 @@ export default function Home() {
                   transition={{ delay: 0.9, duration: 0.7 }}
                 >
                   {[
-                    { title: "Programmation neuro linguistique", icon: "🧠" },
+                    { title: "Programmation neuro-linguistique", icon: "🧠" },
                     { title: "Hypnose", icon: "✨" },
                     { title: "Ennéagramme", icon: "🔮" },
                   ].map((method, idx) => (
