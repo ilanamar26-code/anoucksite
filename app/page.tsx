@@ -85,13 +85,43 @@ export default function Home() {
                     </p>
                   </motion.div>
                 </div>
+
+                {/* Cards Méthodes */}
+                <motion.div 
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.7 }}
+                >
+                  {[
+                    { title: "Programmation neuro linguistique", icon: "🧠" },
+                    { title: "Hypnose", icon: "✨" },
+                    { title: "Ennéagramme", icon: "🔮" },
+                  ].map((method, idx) => (
+                    <motion.div
+                      key={method.title}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.95 + idx * 0.1, duration: 0.5 }}
+                    >
+                      <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-soft2 hover:scale-[1.02] transition-all duration-300 h-full">
+                        <CardContent className="p-4 text-center space-y-2">
+                          <div className="text-3xl mb-2">{method.icon}</div>
+                          <p className="text-sm md:text-base font-medium text-foreground leading-tight">
+                            {method.title}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
                 
                 {/* CTA — EMOTIONAL ANCHOR */}
                   <motion.div 
-                    className="flex flex-col sm:flex-row items-start gap-4 pt-4"
+                    className="flex flex-col sm:flex-row items-start gap-4 pt-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.7 }}
+                    transition={{ delay: 1.2, duration: 0.7 }}
                   >
                   <CTAButton
                     href={primaryCTAUrl}
