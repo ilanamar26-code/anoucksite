@@ -50,7 +50,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
                   >
-                    Retrouver un apaisement profond, durable, et enfin respirer
+                    Retrouver un apaisement profond, durable, et enfin respirer.
                   </motion.h1>
                   
                   <motion.div 
