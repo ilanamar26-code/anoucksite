@@ -16,23 +16,10 @@ export default function Home() {
   return (
     <>
       {/* Logo centré */}
-      <div className="sticky top-0 z-40 w-full flex items-center justify-center py-4 px-4 bg-white/95 backdrop-blur-sm">
+      <div className="sticky top-0 z-40 w-full flex items-center justify-center py-4 px-4">
         <Logo size="lg" variant="dark" priority={true} />
       </div>
       
-      {/* CTA Sticky en haut à droite */}
-      <div className="fixed top-4 right-4 z-50">
-        <CTAButton
-          href={primaryCTAUrl}
-          eventName="cta_click_sticky"
-          variant="primary"
-          size="md"
-          delay={0}
-          className="shadow-lg hover:shadow-xl"
-        >
-          Prendre RDV
-        </CTAButton>
-      </div>
       <main className="min-h-screen pb-20 md:pb-0 bg-gradient-to-b from-muted/30 via-background to-background">
         {/* SECTION 1 — HERO — EMOTIONAL ANCHOR */}
         <div className="min-h-screen flex items-center px-4 md:px-6 lg:px-8 py-8 md:py-12">
