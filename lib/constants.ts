@@ -3,6 +3,9 @@ export const primaryCTAUrl = "/rdv";
 export const bookingProvider: "calendly" | "calcom" = "calcom";
 export const calendlyUrl = "https://calendly.com/XXXXX"; // Placeholder
 export const calcomUrl = "https://cal.com/XXXXX"; // Placeholder - replace with actual Cal.com URL
+// Cal.com username (e.g., "anouck-amar" for https://cal.com/anouck-amar)
+// You can also use event-specific links like "anouck-amar/30min" for a specific event type
+export const calcomUsername = "XXXXX"; // Replace with your Cal.com username (e.g., "anouck-amar")
 
 export const showTestimonials = true;
 export const showTrustLine = true;
