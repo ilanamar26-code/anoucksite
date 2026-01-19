@@ -6,20 +6,15 @@ import { Section } from "@/components/Section";
 import { CTAButton } from "@/components/CTAButton";
 import { GoogleTestimonials } from "@/components/GoogleTestimonials";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import { Logo } from "@/components/Logo";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { primaryCTAUrl, showTestimonials, showTrustLine, cabinetLocation } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   return (
     <>
-      {/* Logo centré */}
-      <div className="sticky top-0 z-40 w-full flex items-center justify-center py-4 px-4">
-        <Logo size="lg" variant="dark" priority={true} />
-      </div>
-      
       <main className="min-h-screen pb-20 md:pb-0 bg-gradient-to-b from-muted/30 via-background to-background">
         {/* SECTION 1 — HERO — EMOTIONAL ANCHOR */}
         <div className="min-h-screen flex items-center px-4 md:px-6 lg:px-8 py-8 md:py-12">
@@ -27,11 +22,31 @@ export default function Home() {
             <div className="grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 lg:gap-16 items-start">
               {/* Contenu texte — Animation progressive */}
               <motion.div 
-                className="space-y-4 md:space-y-5"
+                className="space-y-4 md:space-y-5 order-first"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
               >
+                {/* Logo dans encadré intelligent */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                  className="w-fit"
+                >
+                  <Card className="border-primary/20 bg-white shadow-soft hover:shadow-soft2 transition-all duration-300 p-2 md:p-3 w-fit">
+                    <div className="w-16 md:w-20 h-16 md:h-20 relative flex items-center justify-center">
+                      <Image
+                        src="/branding/Unknown-2.jpeg"
+                        alt="Anouck Amar"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  </Card>
+                </motion.div>
+                
                 <motion.div 
                   className="flex items-center gap-2 text-xs md:text-sm font-medium text-foreground/70 bg-primary/5 px-4 py-2 rounded-full border border-primary/10 w-fit"
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -46,9 +61,9 @@ export default function Home() {
                   Cabinet / Visio — sur rendez-vous
                 </motion.div>
                 
-                <div className="space-y-4 md:space-y-5">
+                <div className="space-y-3 md:space-y-4">
                   <motion.h1 
-                    className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight text-foreground"
+                    className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.1] tracking-tight text-foreground"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
@@ -57,7 +72,7 @@ export default function Home() {
                   </motion.h1>
                   
                   <motion.div 
-                    className="text-base md:text-lg text-foreground/80 leading-relaxed"
+                    className="text-sm md:text-base text-foreground/80 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.7 }}
@@ -68,30 +83,26 @@ export default function Home() {
                   </motion.div>
 
                   <motion.div 
-                    className="space-y-2 pt-1"
+                    className="space-y-1.5 pt-1"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7, duration: 0.7 }}
                   >
-                    <p className="text-sm md:text-base text-foreground/90">
+                    <p className="text-xs md:text-sm text-foreground/90">
                       🟢 <strong className="text-foreground">Vous n'êtes pas le problème.</strong>
                     </p>
-                    <p className="text-sm md:text-base text-foreground/90">
+                    <p className="text-xs md:text-sm text-foreground/90">
                       🟢 <strong className="text-foreground">Votre corps et votre esprit cherchent une solution.</strong>
                     </p>
-                    <p className="text-sm md:text-base text-foreground/90">
+                    <p className="text-xs md:text-sm text-foreground/90">
                       🟢 <strong className="text-foreground">Et il est possible d'aller mieux, plus vite que vous ne l'imaginez.</strong>
-                    </p>
-                    <p className="text-xs md:text-sm text-muted-foreground pt-2 flex items-center gap-1.5">
-                      <span>📍</span>
-                      <span>Cabinet situé à Dubai, Emirats Arabes Unis</span>
                     </p>
                   </motion.div>
                 </div>
 
                 {/* Cards Méthodes */}
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4"
+                  className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9, duration: 0.7 }}
@@ -108,9 +119,9 @@ export default function Home() {
                       transition={{ delay: 0.95 + idx * 0.1, duration: 0.5 }}
                     >
                       <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-soft2 hover:scale-[1.02] transition-all duration-300 h-full">
-                        <CardContent className="p-3 text-center space-y-1.5">
-                          <div className="text-2xl mb-1">{method.icon}</div>
-                          <p className="text-xs md:text-sm font-medium text-foreground leading-tight">
+                        <CardContent className="p-2 text-center space-y-1">
+                          <div className="text-xl mb-0.5">{method.icon}</div>
+                          <p className="text-xs font-medium text-foreground leading-tight">
                             {method.title}
                           </p>
                         </CardContent>
@@ -121,7 +132,7 @@ export default function Home() {
                 
                 {/* CTA — EMOTIONAL ANCHOR */}
                   <motion.div 
-                    className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+                    className="flex flex-col sm:flex-row items-center gap-4 pt-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.7 }}
@@ -136,22 +147,12 @@ export default function Home() {
                   >
                     👉 Prendre rendez-vous
                   </CTAButton>
-                  {showTrustLine && (
-                    <motion.p 
-                      className="text-base md:text-lg font-medium text-foreground text-center"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 1.3, duration: 0.5 }}
-                    >
-                      Réponse sous 24h
-                    </motion.p>
-                  )}
                 </motion.div>
               </motion.div>
 
               {/* Photo d'Anouck — Animation subtile */}
               <motion.div 
-                className="relative order-first md:order-last md:sticky md:top-20"
+                className="relative order-last md:order-last md:sticky md:top-20"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -175,162 +176,14 @@ export default function Home() {
           </div>
         </div>
 
-        {/* SECTION 2 — RECONNAISSANCE ÉMOTIONNELLE */}
-        <AnimatedSection>
-          <Section>
-            <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] items-center">
-              <motion.div 
-                className="space-y-6"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.p 
-                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/90 bg-primary/5 px-4 py-2 rounded-full border border-primary/10"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Protection avant confort
-                </motion.p>
-                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-                  Ton cerveau n'est pas conçu pour te rendre heureuse.
-                  <br />
-                  Il est conçu pour te protéger.
-                </h2>
-                <div className="space-y-5 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  <p><strong className="text-foreground">Tu n'es pas cassé(e).</strong></p>
-                  <p><strong className="text-foreground">Ton système essaie de te protéger.</strong></p>
-                  <p>Ton système fait exactement ce qu'il a appris à faire pour te protéger.</p>
-                  <p>
-                    <strong className="text-foreground">Et on peut le reprogrammer autrement.</strong>
-                  </p>
-                  <p className="pt-2 text-xl font-medium text-foreground">
-                  </p>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <div className="absolute top-4 right-4 opacity-10">
-                    <Logo size="lg" variant="dark" />
-                  </div>
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed relative z-10">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-foreground text-xl"><strong>Votre problématique a une logique.</strong></p>
-                      <p>Ton système privilégie la survie avant le confort.</p>
-                      <p className="font-medium text-primary text-lg"><strong>Le changement peut être doux.</strong></p>
-                      <p className="pt-2"><strong className="text-foreground">Votre corps sait déjà comment guérir.</strong></p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 4 — MA FAÇON DE TRAVAILLER */}
-        <AnimatedSection>
-          <Section>
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <motion.div 
-                className="space-y-6 text-lg md:text-xl text-foreground/80 leading-relaxed"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-              >
-                <p className="text-xl md:text-2xl font-medium text-foreground">
-                  Tu crois décider avec ta tête.
-                  <br />
-                  En réalité, ton système nerveux décide avant.
-                </p>
-                <p>Ici, on ne travaille pas uniquement avec le mental.</p>
-                <p>On travaille avec ce qui, en toi, réagit encore comme si le danger était présent.</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
-                  <motion.div 
-                    className="absolute bottom-4 left-4 opacity-5"
-                    style={{ transform: "rotate(12deg)" }}
-                    animate={{ rotate: [12, 18, 12] }}
-                    transition={{ duration: 8, repeat: Infinity }}
-                  >
-                    <Logo size="xl" variant="dark" />
-                  </motion.div>
-                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground leading-relaxed relative z-10">
-                    <div className="space-y-4">
-                      <p className="font-semibold text-xl text-primary">Quand ton système change,</p>
-                      <p className="font-medium text-lg">tes réactions changent.</p>
-                      <p className="font-semibold text-xl text-primary">Sans forcer. Sans lutter.</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </Section>
-        </AnimatedSection>
-
-        {/* SECTION 5 — TÉMOIGNAGES GOOGLE */}
-        {showTestimonials && (
-          <AnimatedSection delay={0.1}>
-            <Section id="temoignages">
-              <div className="space-y-8">
-                <motion.div 
-                  className="text-center space-y-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
-                    Témoignages
-                  </p>
-                  <h2 className="text-3xl md:text-4xl font-semibold">Des dizaines de personnes m'ont déjà fait confiance</h2>
-                  <p className="text-sm text-muted-foreground">
-                    Trustindex vérifie que la source originale de l'avis est Google.
-                  </p>
-                </motion.div>
-                <GoogleTestimonials />
-                <motion.div 
-                  className="text-center pt-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                >
-                  <CTAButton
-                    href={primaryCTAUrl}
-                    eventName="cta_click_testimonials"
-                    variant="primary"
-                    size="lg"
-                    delay={0}
-                  >
-                    👉 Prendre rendez-vous
-                  </CTAButton>
-                </motion.div>
-              </div>
-            </Section>
-          </AnimatedSection>
-        )}
-
-        {/* SECTION 6 — À QUI ÇA S'ADRESSE */}
+        {/* SECTION 2 — ALIGNEMENT */}
         <AnimatedSection delay={0.1}>
-          <Section className="bg-muted/40 rounded-3xl py-16 md:py-20">
-            <div className="space-y-10">
+          <Section className="bg-muted/40 rounded-3xl py-16 md:py-20 relative">
+            {/* Logo subtil en arrière-plan */}
+            <div className="absolute top-8 right-8 opacity-5 hidden md:block">
+              <Logo size="xl" variant="auto" bgColor="muted" />
+            </div>
+            <div className="space-y-10 relative z-10">
               <motion.div 
                 className="space-y-4"
                 initial={{ opacity: 0, y: 30 }}
@@ -339,7 +192,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
-                  Alignement
+                  CE MESSAGE EST POUR VOUS
                 </p>
                 <h2 className="text-3xl md:text-4xl font-semibold">Je m'adresse à toutes les personnes qui...</h2>
               </motion.div>
@@ -348,30 +201,36 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { 
-                    text: "qui ont eu des", 
-                    highlight: "décalages intérieurs", 
-                    highlight2: "blocages émotionnels", 
-                    icon: "💫",
-                    suffix: "qui rendent parfois leur quotidien difficile..."
+                    text: (
+                      <>
+                        qui ont des <strong className="text-foreground">décalages intérieurs</strong>, qui ont l'impression de <strong className="text-foreground">jouer un rôle</strong>, et de <strong className="text-foreground">ne plus savoir qui elles sont vraiment</strong>.
+                      </>
+                    ),
+                    icon: "💫"
                   },
                   { 
-                    text: "qui souffrent de", 
-                    highlight: "stress, d'anxiété, de tensions", 
-                    icon: "🌀",
-                    suffix: "et qui ne trouvent aucune solution durable malgré leurs efforts."
+                    text: (
+                      <>
+                        qui <strong className="text-foreground">s'auto-sabotent</strong> sur le chemin de leur <strong className="text-foreground">succès</strong>, ce qui crée une <strong className="text-foreground">frustration</strong> de <strong className="text-foreground">ne pas aller jusqu'au bout</strong>.
+                      </>
+                    ),
+                    icon: "🌀"
                   },
                   { 
-                    text: "qui sont", 
-                    highlight: "tendues, anxieuses", 
-                    highlight2: "pression intérieure", 
-                    icon: "⚡",
-                    suffix: "qui ressentent une pression intérieure, des réactions incontrôlables..."
+                    text: (
+                      <>
+                        qui souffrent de <strong className="text-foreground">stress, d'anxiété, de tension</strong>, et qui ne trouve <strong className="text-foreground">aucune solution durable</strong> malgré leurs efforts.
+                      </>
+                    ),
+                    icon: "⚡"
                   },
                   { 
-                    text: "en", 
-                    highlight: "parcours de développement personnel", 
-                    icon: "🌱",
-                    suffix: "et qui recherchent une approche complémentaire efficace."
+                    text: (
+                      <>
+                        en parcours de <strong className="text-foreground">développement personnel</strong>, d'<strong className="text-foreground">amélioration</strong> au travail ou dans leur vie personnelle et qui cherche une <strong className="text-foreground">approche complémentaire efficace</strong>.
+                      </>
+                    ),
+                    icon: "🌱"
                   },
                 ].map((item, idx) => (
                   <motion.div
@@ -385,11 +244,7 @@ export default function Home() {
                       <CardContent className="p-6 md:p-8 space-y-4">
                         <div className="text-4xl mb-3">{item.icon}</div>
                         <p className="text-base md:text-lg text-foreground/85 leading-relaxed">
-                          {item.text} <strong className="text-foreground">{item.highlight}</strong>
-                          {item.highlight2 && (
-                            <> ou <strong className="text-foreground">{item.highlight2}</strong></>
-                          )}
-                          {" "}{item.suffix}
+                          {item.text}
                         </p>
                       </CardContent>
                     </Card>
@@ -419,9 +274,6 @@ export default function Home() {
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
                 <Card className="relative overflow-hidden border-2 border-dashed border-primary/30 bg-gradient-to-br from-white/90 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-soft2 transition-all duration-300">
-                  <div className="absolute bottom-4 right-4 opacity-5">
-                    <Logo size="md" variant="dark" />
-                  </div>
                   <CardContent className="p-8 md:p-10 space-y-5 relative z-10">
                     <p className="text-lg md:text-xl font-semibold text-foreground">
                       Tu as peut-être déjà essayé :
@@ -500,9 +352,6 @@ export default function Home() {
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
                     <Card className="relative overflow-hidden border-primary/30 bg-gradient-to-br from-primary/10 via-white/95 to-white/90 backdrop-blur-sm shadow-soft2 hover:shadow-glow transition-all duration-300 h-full">
-                      <div className="absolute top-4 right-4 opacity-5">
-                        <Logo size="md" variant="dark" />
-                      </div>
                       <CardContent className="p-8 space-y-5 relative z-10">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="text-4xl">✅</div>
@@ -572,10 +421,82 @@ export default function Home() {
           </Section>
         </AnimatedSection>
 
-        {/* SECTION 7 — QUI SUIS-JE (CRÉDIBILITÉ) */}
+        {/* SECTION 5 — UNE PROTECTION NATURELLE */}
         <AnimatedSection>
-          <Section id="a-propos">
-            <div className="space-y-10">
+          <Section>
+            <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] items-center">
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+              >
+                <motion.p 
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/90 bg-primary/5 px-4 py-2 rounded-full border border-primary/10"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  UNE PROTECTION NATURELLE
+                </motion.p>
+                <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+                  Ton cerveau n'est pas conçu pour te rendre heureuse.
+                  <br />
+                  Il est conçu pour te protéger.
+                </h2>
+                <div className="space-y-5 text-lg md:text-xl text-foreground/80 leading-relaxed">
+                  <p><strong className="text-foreground">Tu n'es pas cassé(e).</strong></p>
+                  <p><strong className="text-foreground">Ton système essaie de te protéger.</strong></p>
+                  <p>Ton système fait exactement ce qu'il a appris à faire pour te protéger.</p>
+                  <p>
+                    <strong className="text-foreground">Et on peut le reprogrammer autrement.</strong>
+                  </p>
+                  <div className="pt-4 w-full">
+                    <CTAButton
+                      href={primaryCTAUrl}
+                      eventName="cta_click_protection"
+                      variant="primary"
+                      size="lg"
+                      delay={0}
+                      className="w-full"
+                    >
+                      👉 Prendre rendez-vous
+                    </CTAButton>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-white/95 to-white/90 backdrop-blur-sm border-primary/20 shadow-soft2 hover:shadow-glow transition-all duration-300">
+                  <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed relative z-10">
+                    <div className="space-y-4">
+                      <p className="font-semibold text-foreground text-xl"><strong>Votre problématique a une logique.</strong></p>
+                      <p>Ton système privilégie la survie avant le confort.</p>
+                      <p className="font-medium text-primary text-lg"><strong>Le changement peut être doux.</strong></p>
+                      <p className="pt-2"><strong className="text-foreground">Votre corps sait déjà comment guérir.</strong></p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </Section>
+        </AnimatedSection>
+
+        {/* SECTION 6 — ANOUCK AMAR */}
+        <AnimatedSection>
+          <Section id="a-propos" className="bg-muted/40 rounded-3xl py-16 md:py-20 relative">
+            {/* Logo subtil en arrière-plan */}
+            <div className="absolute top-8 right-8 opacity-5 hidden md:block">
+              <Logo size="xl" variant="auto" bgColor="muted" />
+            </div>
+            <div className="space-y-10 relative z-10">
               <motion.div 
                 className="text-center space-y-4"
                 initial={{ opacity: 0, y: 30 }}
@@ -584,23 +505,23 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
-                  Crédibilité
+                  ANOUCK AMAR
                 </p>
                 <h2 className="text-3xl md:text-4xl font-semibold">
-                  Qui suis-je pour que tu me fasses confiance ?
+                  Qui suis-je pour vous promettre cela ?
                 </h2>
               </motion.div>
 
-              <div className="grid md:grid-cols-[1fr_1.2fr_1fr] gap-10 items-start">
+              <div className="grid md:grid-cols-[1fr_1.8fr] gap-10 items-stretch">
                 <motion.div 
-                  className="relative order-2 md:order-1"
+                  className="relative order-2 md:order-1 h-full"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
                 >
                   <motion.div 
-                    className="relative aspect-[3/4] max-h-[500px] rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
+                    className="relative h-full rounded-2xl overflow-hidden shadow-soft2 border-2 border-primary/20"
                     whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                   >
                     <Image
@@ -612,91 +533,28 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   </motion.div>
-                  <motion.div 
-                    className="absolute -bottom-4 -right-4 bg-secondary backdrop-blur-sm rounded-full p-2 shadow-soft2 border-2 border-primary/20"
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <div className="[&_img]:h-6 [&_img]:w-auto">
-                      <Logo size="sm" variant="dark" />
-                    </div>
-                  </motion.div>
                 </motion.div>
 
                 <motion.div
-                  className="order-1 md:order-2"
+                  className="order-1 md:order-2 h-full"
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-white/90 to-primary/5 backdrop-blur-sm shadow-soft2 hover:shadow-glow transition-all duration-300">
+                  <Card className="border-primary/20 bg-gradient-to-br from-white/95 via-white/90 to-primary/5 backdrop-blur-sm shadow-soft2 hover:shadow-glow transition-all duration-300 h-full">
                     <CardContent className="p-8 md:p-10 space-y-6 text-lg md:text-xl text-foreground/85 leading-relaxed">
                       <div className="space-y-5">
                         <p>
-                          Je suis <strong className="text-foreground text-xl">Anouck AMAR</strong>, praticienne en PNL, hypnose et ennéagramme.
+                          Depuis l'enfance, j'ai été confrontée à des problèmes de poids et à des <strong className="text-foreground">blocages profonds</strong> qui ont longtemps influencé ma relation à moi-même. J'ai exploré de nombreuses formes de thérapies, cherchant des <strong className="text-foreground">solutions durables</strong>, sans jamais parvenir à un véritable apaisement.
                         </p>
                         <p>
-                          Depuis plusieurs années, j'accompagne des personnes qui, comme toi peut-être, se sentent bloquées malgré leur compréhension intellectuelle de leurs difficultés.
+                          Il y a quatre ans, la découverte de la <strong className="text-foreground">PNL et de l'hypnose</strong> a marqué un <strong className="text-foreground">tournant décisif</strong>. Pour la première fois, j'ai compris mes schémas inconscients et pu les transformer en profondeur. Deux ans plus tard, l'<strong className="text-foreground">ennéagramme</strong> est venu enrichir cette approche en apportant une compréhension fine de mes mécanismes de fonctionnement.
                         </p>
                         <p>
-                          Ce qui me passionne, c'est de travailler avec ce qui, en toi, réagit encore comme si le danger était présent — même quand ta tête sait que ce n'est plus le cas.
-                        </p>
-                        <p>
-                          Mon approche ne se limite pas au mental. Elle s'adresse directement à ton système nerveux, à ce qui, en toi, a besoin de se sentir enfin en sécurité pour que les réactions changent naturellement, sans forcer.
-                        </p>
-                        <p className="font-semibold text-foreground text-xl pt-2">
-                          Aujourd'hui, je mets toute cette expérience et cette énergie au service de celles qui sont prêtes à explorer une autre voie.
+                          Aujourd'hui, j'accompagne celles et ceux qui se sentent bloqués dans des <strong className="text-foreground">schémas répétitifs</strong> ou un rapport difficile à eux-mêmes. Grâce à une approche personnalisée mêlant <strong className="text-foreground">PNL, hypnose et ennéagramme</strong>, je vous aide à retrouver <strong className="text-foreground">clarté, équilibre et liberté intérieure</strong>.
                         </p>
                       </div>
-                      
-                      <div className="pt-6 border-t border-border/60">
-                        <p className="text-base md:text-lg text-muted-foreground">
-                          <strong className="text-foreground">Cabinet / Visio</strong> — {cabinetLocation.address}
-                        </p>
-                        {cabinetLocation.fullAddress && (
-                          <p className="text-sm text-muted-foreground mt-2">
-                            {cabinetLocation.fullAddress}
-                          </p>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                {/* Card Mon approche */}
-                <motion.div
-                  className="order-3"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <Card className="border-dashed border-border/80 bg-white/90 backdrop-blur-sm hover:shadow-soft transition-all duration-300 h-full">
-                    <CardContent className="p-8 md:p-10 space-y-4 text-lg md:text-xl text-foreground/85 leading-relaxed">
-                      <h3 className="text-2xl font-semibold text-foreground">Mon approche</h3>
-                      <p>
-                        Ici, on ne force pas le changement.
-                        <br />
-                        On ne lutte pas contre toi.
-                      </p>
-                      <p>
-                        On ne travaille pas uniquement avec le mental.
-                        <br />
-                        On travaille avec ce qui, en toi, réagit encore comme si le danger était présent.
-                      </p>
-                      <p className="font-medium">Quand ton système se sent enfin en sécurité :</p>
-                      <ul className="list-disc list-inside space-y-2 ml-4">
-                        <li>les réactions changent</li>
-                        <li>les schémas s'assouplissent</li>
-                        <li>le contrôle devient inutile</li>
-                      </ul>
-                      <p className="font-semibold text-foreground text-xl pt-2">
-                        👉 Le changement devient possible sans te forcer à lâcher prise.
-                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -704,6 +562,49 @@ export default function Home() {
             </div>
           </Section>
         </AnimatedSection>
+
+        {/* SECTION 7 — TÉMOIGNAGES GOOGLE */}
+        {showTestimonials && (
+          <AnimatedSection delay={0.1}>
+            <Section id="temoignages">
+              <div className="space-y-8">
+                <motion.div 
+                  className="text-center space-y-4"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
+                    Témoignages
+                  </p>
+                  <h2 className="text-3xl md:text-4xl font-semibold">Des dizaines de personnes m'ont déjà fait confiance</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Trustindex vérifie que la source originale de l'avis est Google.
+                  </p>
+                </motion.div>
+                <GoogleTestimonials />
+                <motion.div 
+                  className="text-center pt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                >
+                  <CTAButton
+                    href={primaryCTAUrl}
+                    eventName="cta_click_testimonials"
+                    variant="primary"
+                    size="lg"
+                    delay={0}
+                  >
+                    👉 Prendre rendez-vous
+                  </CTAButton>
+                </motion.div>
+              </div>
+            </Section>
+          </AnimatedSection>
+        )}
 
         {/* SECTION 8 — APPEL À L'ACTION PRINCIPAL — ULTIMATE EMOTIONAL ANCHOR */}
         <AnimatedSection delay={0.2}>
@@ -716,23 +617,6 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
             >
-              {/* Logo stylisé en arrière-plan */}
-              <motion.div 
-                className="absolute top-8 right-8 opacity-5"
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Logo size="xl" variant="dark" />
-              </motion.div>
-              <motion.div 
-                className="absolute bottom-8 left-8 opacity-5"
-                style={{ transform: "rotate(180deg)" }}
-                animate={{ rotate: [180, 540] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Logo size="xl" variant="dark" />
-              </motion.div>
-              
               <div className="relative z-10 space-y-8">
                 <motion.div 
                   className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/90 bg-primary/10 px-5 py-2.5 rounded-full border border-primary/20"
@@ -808,7 +692,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-foreground/80">
               <div className="flex flex-col items-center md:items-start gap-3">
-                <Logo size="sm" variant="dark" />
+                <Logo size="sm" variant="auto" bgColor="white" />
                 <div className="text-center md:text-left">
                   <p className="font-semibold text-foreground">Anouck AMAR</p>
                   <p>Cabinet / Visio — sur rendez-vous</p>

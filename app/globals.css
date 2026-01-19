@@ -11,8 +11,11 @@
   --primary-foreground: 0 0% 100%; /* White text on primary */
   
   /* Secondary: Soft beige (from logo background) */
-  --secondary: 30 15% 85%; /* Light beige - emphasis, highlights */
+  --secondary: 35 20% 88%; /* Light beige - matches logo background exactly */
   --secondary-foreground: 28 40% 25%; /* Dark brown text on secondary */
+  
+  /* Logo background color - exact match */
+  --logo-bg: 35 20% 88%; /* Exact beige from logo image */
   
   /* Neutral palette - calm, breathable */
   --background: 0 0% 100%; /* Pure white */

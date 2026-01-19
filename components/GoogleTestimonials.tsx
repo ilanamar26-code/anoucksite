@@ -40,6 +40,9 @@ export function GoogleTestimonials() {
 
   const averageRating = 5;
   const totalReviews = testimonials.length;
+  
+  // Limiter à 3 témoignages
+  const displayedTestimonials = testimonials.slice(0, 3);
 
   return (
     <div className="space-y-8">
@@ -66,9 +69,9 @@ export function GoogleTestimonials() {
         </div>
       </motion.div>
 
-      {/* Grid de témoignages - 4 en ligne horizontale */}
-      <div className="flex flex-row gap-6 overflow-x-auto pb-4">
-        {testimonials.map((testimonial, idx) => (
+      {/* Grid de témoignages - 3 en grille statique */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {displayedTestimonials.map((testimonial, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +79,7 @@ export function GoogleTestimonials() {
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.5 }}
           >
-            <Card className="flex-shrink-0 w-[300px] md:w-[350px] border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-glow hover:scale-[1.02] transition-all duration-300">
+            <Card className="w-full border-primary/20 bg-gradient-to-br from-white/95 via-primary/5 to-white/90 backdrop-blur-sm shadow-soft hover:shadow-glow hover:scale-[1.02] transition-all duration-300 h-full">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">

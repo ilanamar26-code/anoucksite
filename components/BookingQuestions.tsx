@@ -19,6 +19,8 @@ const bookingSchema = z.object({
 
 type BookingFormData = z.infer<typeof bookingSchema>;
 
+const WHATSAPP_NUMBER = "+971545445929";
+
 interface BookingQuestionsProps {
   onComplete: (data: BookingFormData) => void;
 }
@@ -32,11 +34,39 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
     resolver: zodResolver(bookingSchema),
   });
 
+  const generateWhatsAppMessage = (data: BookingFormData) => {
+    const message = `Bonjour, je souhaite prendre rendez-vous pour une séance de clarté.
+
+*Problème principal :*
+${data.problem}
+
+*Durée :*
+${data.duration}
+
+*Travail sur soi précédent :*
+${data.priorWork}
+
+Je confirme ma demande de rendez-vous.`;
+    
+    return encodeURIComponent(message);
+  };
+
   const onSubmit = (data: BookingFormData) => {
     track("booking_questions_submit", {
       duration: data.duration,
       priorWork: data.priorWork,
     });
+    
+    track("booking_whatsapp_confirm", {
+      duration: data.duration,
+      priorWork: data.priorWork,
+    });
+    
+    const message = generateWhatsAppMessage(data);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${message}`;
+    
+    window.open(whatsappUrl, "_blank");
+    
     onComplete(data);
   };
 
@@ -114,7 +144,7 @@ export function BookingQuestions({ onComplete }: BookingQuestionsProps) {
         disabled={isSubmitting}
         className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-soft2 hover:shadow-glow min-h-[44px]"
       >
-        {isSubmitting ? "Chargement..." : "Accéder au calendrier"}
+        {isSubmitting ? "Chargement..." : "Je confirme ma demande"}
       </button>
     </form>
   );

@@ -9,7 +9,7 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex h-14 md:h-16 items-center justify-center">
           <Link href="/" className="flex items-center">
-            <Logo size="lg" variant="dark" priority={true} />
+            <Logo size="sm" variant="dark" priority={true} />
           </Link>
         </div>
       </div>
